@@ -23,6 +23,7 @@
     "lint:fix": "eslint . --fix",
     "test": "npm run lint",
     "dev": "npm run test && npm start",
+    "lint:scan:fix": "npm run lint || npm run lint:fix",
     "cmd:delete": "node -r dotenv/config src/delete.js"
   },
   "devDependencies": {

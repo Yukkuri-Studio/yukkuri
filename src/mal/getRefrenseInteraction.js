@@ -1,4 +1,4 @@
-const getAnimeName = require('./getModelAnimeName')
+const getAnimeName = require('./getAnimeName')
 
 module.exports = {
   async awaitRefrenseInteraction (msg, member) {
