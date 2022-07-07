@@ -30,7 +30,7 @@ module.exports = {
     } catch (er) {
       i.reply({
         content:
-          'There is something was wrong when fetching the data, maybe the title is to loong, so i can\'t display it\nIf this is a bug, feel free to contact my developer at my support server.',
+          "There is something was wrong when fetching the data, maybe the title is to loong, so i can't display it\nIf this is a bug, feel free to contact my developer at my support server.",
         ephemeral: true
       })
       console.log(er.stack)

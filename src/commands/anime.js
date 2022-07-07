@@ -1,9 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders')
-const {
-  MessageEmbed,
-  MessageButton,
-  MessageActionRow
-} = require('discord.js')
+const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
 const Mal = require('mal-scraper')
 const GetRefrense = require('../mal/getRefrense')
 const GetSeason = require('../mal/getSeason')
@@ -12,53 +8,66 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('anime')
     .setDescription('Search your fav anime achording from MAl')
-    .addSubcommand((sub) => sub
-      .setName('search')
-      .setDescription('Search anime on MAL')
-      .addStringOption((opt) => opt
-        .setName('name')
-        .setDescription('Anime name you want to search')
-        .setRequired(true)))
-    .addSubcommand((sub) => sub
-      .setName('season')
-      .setDescription('Get anime season')
-      .addNumberOption((opt) => opt
-        .setName('year')
-        .setDescription('Anime year season')
-        .setRequired(true))
-      .addStringOption((opt) => opt
-        .setName('season')
-        .setDescription('Anime season, choice here')
-        .addChoices(
-          { name: 'spring', value: 'spring' },
-          { name: 'summer', value: 'summer' },
-          { name: 'fall', value: 'fall' },
-          { name: 'winter', value: 'winter' }
+    .addSubcommand((sub) =>
+      sub
+        .setName('search')
+        .setDescription('Search anime on MAL')
+        .addStringOption((opt) =>
+          opt
+            .setName('name')
+            .setDescription('Anime name you want to search')
+            .setRequired(true)
         )
-        .setRequired(true))
-      .addStringOption((opt) => opt
-        .setName('type')
-        .setDescription('Anime season type, default is TV')
-        .addChoices(
-          { name: 'TV', value: 'TV' },
-          { name: 'TVNews', value: 'TVNews' },
-          { name: 'TVCon', value: 'TVCon' },
-          { name: 'ONAs', value: 'ONAs' },
-          { name: 'OVAs', value: 'OVAs' },
-          { name: 'Specials', value: 'Specials' },
-          { name: 'Movies', value: 'Movies' }
-        )))
-    .addSubcommand((sub) => sub
-      .setName('reference')
-      .setDescription('Get recommand anime')
-      .addStringOption((opt) => opt
+    )
+    .addSubcommand((sub) =>
+      sub
+        .setName('season')
+        .setDescription('Get anime season')
+        .addNumberOption((opt) =>
+          opt
+            .setName('year')
+            .setDescription('Anime year season')
+            .setRequired(true)
+        )
+        .addStringOption((opt) =>
+          opt
+            .setName('season')
+            .setDescription('Anime season, choice here')
+            .addChoices(
+              { name: 'spring', value: 'spring' },
+              { name: 'summer', value: 'summer' },
+              { name: 'fall', value: 'fall' },
+              { name: 'winter', value: 'winter' }
+            )
+            .setRequired(true)
+        )
+        .addStringOption((opt) =>
+          opt
+            .setName('type')
+            .setDescription('Anime season type, default is TV')
+            .addChoices(
+              { name: 'TV', value: 'TV' },
+              { name: 'TVNews', value: 'TVNews' },
+              { name: 'TVCon', value: 'TVCon' },
+              { name: 'ONAs', value: 'ONAs' },
+              { name: 'OVAs', value: 'OVAs' },
+              { name: 'Specials', value: 'Specials' },
+              { name: 'Movies', value: 'Movies' }
+            )
+        )
+    )
+    .addSubcommand((sub) =>
+      sub
         .setName('reference')
-        .setDescription('Anime reference name or id from MAL')
-        .setRequired(true))),
+        .setDescription('Get recommand anime')
+        .addStringOption((opt) =>
+          opt
+            .setName('reference')
+            .setDescription('Anime reference name or id from MAL')
+            .setRequired(true)
+        )
+    ),
 
-  /**
-   * @param {CommandInteraction} i
-   */
   async execute (i) {
     const opt = i.options.getSubcommand()
 
@@ -176,7 +185,7 @@ module.exports = {
       const names = i.options.getString('reference')
 
       try {
-        await i.deferReply().catch(er => er)
+        await i.deferReply().catch((er) => er)
         i.deleteReply()
         const name = await Mal.getRecommendationsList(names)
         GetRefrense.MalRefrense(name, i)

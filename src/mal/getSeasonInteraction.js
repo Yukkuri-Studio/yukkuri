@@ -1,5 +1,5 @@
 const Mal = require('mal-scraper')
-const getModelAnimeName = require('./getModelAnimeName')
+const getAnimeName = require('./getAnimeName')
 
 module.exports = {
   async awaitSeasonInteraction (msg, member) {
@@ -22,7 +22,7 @@ module.exports = {
           const value = i.values[0]
           const res = await Mal.getInfoFromName(value)
 
-          const animes = await getModelAnimeName.awaitModelAnime(value)
+          const animes = await getAnimeName.awaitModelAnime(value)
 
           msg.edit({
             embeds: [animes.embed],
