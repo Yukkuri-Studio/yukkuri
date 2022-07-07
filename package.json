@@ -22,7 +22,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "npm run lint",
-    "dev": "npm run test && npm start"
+    "dev": "npm run test && npm start",
+    "cmd:delete": "node -r dotenv/config src/delete.js"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
