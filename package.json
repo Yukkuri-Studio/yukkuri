@@ -1,7 +1,7 @@
 {
   "name": "yukkuri-discord-bot",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
     "@discordjs/builders": "0.15.0",
@@ -10,17 +10,26 @@
     "discord-api-types": "0.36.1",
     "discord.js": "13.8.1",
     "discord.js-docs": "0.3.0",
+    "dotenv": "^16.0.1",
     "mal-scraper": "2.11.4",
-    "moment": "2.29.3",
+    "moment": "^2.29.4",
     "moment-timezone": "0.5.34",
-    "pretty-ms": "8.0.0",
-    "dotenv": "16.0.1"
+    "nodemon": "^2.0.19",
+    "pretty-ms": "8.0.0"
   },
   "scripts": {
-    "start": "node -r dotenv/config index.js"
+    "start": "node -r dotenv/config src/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint",
+    "dev": "npm run test && npm start"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
     "typescript": "^4.7.4"
   },
   "keywords": [
@@ -30,5 +39,15 @@
     "discord bot",
     "slash command"
   ],
-  "description": "Yukkuri Studio Discord Bot"
+  "description": "Yukkuri Studio Discord Bot",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "ext": "js",
+    "watch": [
+      "src/*"
+    ],
+    "exec": "npm run test && npm start"
+  }
 }
