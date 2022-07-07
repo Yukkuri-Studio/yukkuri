@@ -41,7 +41,7 @@ module.exports = {
               }
             ])
 
-          msg.edit({ embeds: [embed], components: [] })
+          msg.edit({ content: value, embeds: [embed], components: [] })
           break
         }
       }
@@ -85,7 +85,7 @@ module.exports = {
               }
             ])
 
-          msg.edit({ embeds: [embed], components: [] })
+          msg.edit({ content: value, embeds: [embed], components: [] })
           break
         }
       }
