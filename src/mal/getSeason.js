@@ -1,7 +1,4 @@
-const {
-  MessageActionRow,
-  MessageSelectMenu
-} = require('discord.js')
+const { MessageActionRow, MessageSelectMenu } = require('discord.js')
 const SeasonInteraction = require('./getSeasonInteraction')
 
 module.exports = {

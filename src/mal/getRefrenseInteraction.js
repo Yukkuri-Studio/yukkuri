@@ -24,7 +24,7 @@ module.exports = {
           msg.edit({
             embeds: [animes.embed],
             components: [animes.row],
-            content: `Anime ${animes.title}`
+            content: `Anime ${animes.res.title}`
           })
           break
         }

@@ -69,7 +69,8 @@ module.exports = {
 
     return {
       row,
-      embed
+      embed,
+      res
     }
   }
 }
