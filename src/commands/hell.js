@@ -18,6 +18,9 @@ module.exports = {
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),
   async execute (i) {
+    if (i.guild.id !== '993681829796266018') {
+      return i.reply({ content: 'This commmand can only run at **Yukkuri - Official Server**', ephemeral: true })
+    }
     if (!i.member.permissions.has(['MANAGE_GUILD'])) {
       return i.reply({
         content: 'You have no permissions to run this command',
