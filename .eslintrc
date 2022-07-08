@@ -1,0 +1,56 @@
+{
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "comma-spacing": "error",
+      "comma-style": "error",
+      "max-nested-callbacks": ["error", { "max": 4 }],
+      "max-statements-per-line": ["error", { "max": 2 }],
+      "no-multi-spaces": "error",
+      "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 0 }],
+      "no-trailing-spaces": ["error"],
+      "no-var": "error",
+      "object-curly-spacing": ["error", "always"],
+      "prefer-const": "error",
+      "quotes": ["error", "double"],
+      "semi": ["error", "always"],
+      "space-before-blocks": "error",
+      "spaced-comment": "error",
+      "yoda": "error",
+      "prettier/prettier": ["error", {
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "endOfLine": "auto",
+        "insertPragma": false,
+        "bracketSameLine": true,
+        "printWidth": 120,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "requirePragma": false,
+        "semi": true,
+        "singleQuote": false,
+        "singleAttributePerLine": true,
+        "tabWidth": 3,
+        "useTabs": true,
+        "embeddedLanguageFormatting": "auto",
+        "jsxSingleQuote": true,
+        "vueIndentScriptAndStyle": true
+      }]
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest"
+    }
+  }

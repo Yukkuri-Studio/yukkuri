@@ -1,0 +1,58 @@
+{
+  "name": "yukkuri-ts",
+  "version": "1.0.0",
+  "description": "Yukkuri Studio Discord Bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "npm run build && node .",
+    "build": "rimraf dist && tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "discord slash command",
+    "discord",
+    "yukkuri",
+    "discord bot",
+    "slash command"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.210",
+    "@types/glob": "^7.2.0",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "axios": "^0.27.2",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.36.1",
+    "discord.js-light": "^4.8.1",
+    "mal-scraper": "^2.11.4",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.34"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "ext": "ts",
+    "watch": [
+      "src/*"
+    ],
+    "exec": "rimraf dist && tsc && node ."
+  }
+}
