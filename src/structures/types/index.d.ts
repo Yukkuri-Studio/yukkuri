@@ -1,5 +1,5 @@
 declare module "mal-scraper" {
-   interface AnimeDataModel {
-      japaneseTitle: string;
-   }
+	interface AnimeDataModel {
+		japaneseTitle: string;
+	}
 }

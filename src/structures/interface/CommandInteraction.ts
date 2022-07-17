@@ -2,11 +2,11 @@ import { SlashCommandBuilder, SlashCommandSubcommandsOnlyBuilder } from "@discor
 import { PermissionResolvable } from "discord.js-light";
 
 export interface CommandInteractionType {
-   enable?: boolean;
-   cmd: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
-   readonly required?: {
-      clientPermissions?: PermissionResolvable[];
-      developer?: boolean;
-      cooldown?: number;
-   };
+	enable?: boolean;
+	cmd: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
+	readonly required?: {
+		clientPermissions?: PermissionResolvable[];
+		developer?: boolean;
+		cooldown?: number;
+	};
 }
